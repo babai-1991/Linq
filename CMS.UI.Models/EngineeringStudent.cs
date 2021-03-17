@@ -8,7 +8,7 @@ namespace CMS.UI.Models
 {
     public class EngineeringStudent:Student
     {
-        public EngineeringStudent(int studentId, string firstName, string lastName) : base(studentId, firstName, lastName)
+        public EngineeringStudent(int studentId, string firstName, string lastName,string courseid) : base(studentId, firstName, lastName,courseid)
         {
         }
     }

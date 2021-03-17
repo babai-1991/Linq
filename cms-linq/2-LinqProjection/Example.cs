@@ -19,7 +19,7 @@ namespace cms_linq._2_LinqProjection
 
         private static void LinqSelectAnonymous()
         {
-            var students = StudentList.FetchStudents().Select(stdnt => new
+            var students = Data.FetchStudents().Select(stdnt => new
             {
                 ID = stdnt.StudentId,
                 FullName = stdnt.FirstName + " " + stdnt.LastName
@@ -34,7 +34,7 @@ namespace cms_linq._2_LinqProjection
         //only get specific property
         private static void LinqSelectVariant()
         {
-            var students = StudentList.FetchStudents().
+            var students = Data.FetchStudents().
                                                     Select(stdnt => (stdnt.StudentId, stdnt.FirstName));
             foreach (var student in students)
             {
@@ -44,7 +44,7 @@ namespace cms_linq._2_LinqProjection
 
         private static void LinqSelect()
         {
-            IEnumerable<Student> students = StudentList.FetchStudents().Select(s => s);
+            IEnumerable<Student> students = Data.FetchStudents().Select(s => s);
             foreach (var student in students)
             {
                 Console.WriteLine($"Student Name: {student.FirstName} {student.LastName}");

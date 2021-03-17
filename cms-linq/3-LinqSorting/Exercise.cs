@@ -23,7 +23,7 @@ namespace cms_linq._3_LinqSorting
             //data stored in the local variable students will gets reverse forever , actual data will not be reversed.
             // Practically , its not possible to reverse the data on the table right, this is also something like that.
 
-            var students = StudentList.FetchStudents();
+            var students = Data.FetchStudents();
             Console.WriteLine("------Before reverse on data-source-----");
             Console.WriteLine();
             foreach (var std in students)
@@ -49,7 +49,7 @@ namespace cms_linq._3_LinqSorting
         //ThenBy() , ThenByDescending()
         private static void LinqThenBy()
         {
-            var students = StudentList.FetchStudents().OrderBy(s => s.StudentId).ThenByDescending(s=>s.FirstName);
+            var students = Data.FetchStudents().OrderBy(s => s.StudentId).ThenByDescending(s=>s.FirstName);
             foreach (var std in students)
             {
                 Console.WriteLine($"{std.FirstName} {std.LastName} {std.StudentId}");
@@ -58,7 +58,7 @@ namespace cms_linq._3_LinqSorting
 
         private static void LinqOrderByDesc()
         {
-            var students = StudentList.FetchStudents().OrderByDescending(s => s.StudentId);
+            var students = Data.FetchStudents().OrderByDescending(s => s.StudentId);
             foreach (var std in students)
             {
                 Console.WriteLine($"{std.FirstName} {std.LastName} {std.StudentId}");
@@ -67,7 +67,7 @@ namespace cms_linq._3_LinqSorting
 
         private static void LinqOrderBy()
         {
-            var students = StudentList.FetchStudents().OrderBy(s => s.LastName);
+            var students = Data.FetchStudents().OrderBy(s => s.LastName);
             foreach (var std in students)
             {
                 Console.WriteLine($"{std.FirstName} {std.LastName} {std.StudentId}");

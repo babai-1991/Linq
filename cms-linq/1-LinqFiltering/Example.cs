@@ -25,7 +25,7 @@ namespace cms_linq.LinqFiltering
          */
         private static void LinqOfType()
         {
-            IEnumerable<EngineeringStudent> enggStudents = StudentList.FetchStudents().OfType<EngineeringStudent>();
+            IEnumerable<EngineeringStudent> enggStudents = Data.FetchStudents().OfType<EngineeringStudent>();
             foreach (EngineeringStudent std in enggStudents)
             {
                 Console.WriteLine(std.StudentId + " " + std.FirstName + " " + std.LastName);
@@ -35,7 +35,7 @@ namespace cms_linq.LinqFiltering
         private static void LinqWhere()
         {
             //IEnumerable<Student> studentFilter = _students.Where(s => s.LastName == "Smith");
-            IEnumerable<Student> studentFilter = StudentList.FetchStudents().Where(s => s.LastName.Equals("Smith"));
+            IEnumerable<Student> studentFilter = Data.FetchStudents().Where(s => s.LastName.Equals("Smith"));
             foreach (Student std in studentFilter)
             {
                 Console.WriteLine(std.StudentId + " " + std.FirstName + " " + std.LastName);
