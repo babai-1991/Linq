@@ -15,9 +15,63 @@ namespace cms_linq._4_LinqJoin
         {
             _students = Data.FetchStudents();
             _courses = Data.FetchCourses();
-            LinqJoinOperator();
+            //LinqJoinOperator();
+            LinqGroupJoin();
         }
 
+        //one to many 
+        //or many to many
+        //similar like left outer , right outer join
+        private static void LinqGroupJoin()
+        {
+            //var query = from course in _courses
+            //    join student in _students
+            //        on course.Id equals student.CourseId
+            //        into courseStudents
+            //    select new
+            //    {
+            //        CourseName = course.Name,
+            //        EnrolledStudent = courseStudents
+            //    };
+
+            //foreach (var data in query)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.Green;
+            //    Console.WriteLine($"Course Name : {data.CourseName}");
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //    foreach (Student std in data.EnrolledStudent)
+            //    {
+            //        Console.WriteLine($"Student Id: {std.StudentId} Student Name: {std.FirstName+" "+std.LastName}");
+            //    }
+            //}
+
+
+            // Method syntax is exactly similar to Join
+
+            var query = _courses.GroupJoin(_students,
+                course => course.Id,
+                student => student.CourseId,
+                (c, courseStudents) =>
+                    new
+                    {
+                        CourseName = c.Name,
+                        EnrolledStudent = courseStudents
+                    });
+
+            foreach (var data in query)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Course Name : {data.CourseName}");
+                Console.ForegroundColor = ConsoleColor.White;
+                foreach (var std in data.EnrolledStudent)
+                {
+                    Console.WriteLine($"Student Id: {std.StudentId} Student Name: {std.FirstName + " " + std.LastName}");
+                }
+            }
+        }
+
+        //one to one
+        //inner join
         private static void LinqJoinOperator()
         {
             //query operator easy on joins
