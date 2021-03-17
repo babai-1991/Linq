@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="1-LinqFiltering\Example.cs" />
     <Compile Include="2-LinqProjection\Example.cs" />
+    <Compile Include="3-LinqSorting\Exercise.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

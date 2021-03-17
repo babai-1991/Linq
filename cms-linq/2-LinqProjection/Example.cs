@@ -115,6 +115,4 @@ namespace cms_linq._2_LinqProjection
         public string Name { get; set; }
     }
 
-
-
 }
