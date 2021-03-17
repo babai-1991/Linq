@@ -10,7 +10,8 @@ namespace cms_linq
     {
         static void Main(string[] args)
         {
-            cms_linq.LinqFiltering.TestPilot.Start();
+            //cms_linq.LinqFiltering.Example.Start();
+            cms_linq._2_LinqProjection.Example.Start();
         }
     }
 }

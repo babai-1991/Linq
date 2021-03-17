@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1-LinqFiltering\TestPilot.cs" />
+    <Compile Include="1-LinqFiltering\Example.cs" />
+    <Compile Include="2-LinqProjection\Example.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

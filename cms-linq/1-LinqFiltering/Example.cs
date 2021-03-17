@@ -8,13 +8,12 @@ using CMS.UI.Models;
 
 namespace cms_linq.LinqFiltering
 {
-    class TestPilot
+    class Example
     {
-        static List<Student> _students = new List<Student>();
+        
         public static void Start()
         {
-            InitializeData();
-
+            
             //LinqWhere();
 
             LinqOfType();
@@ -26,7 +25,7 @@ namespace cms_linq.LinqFiltering
          */
         private static void LinqOfType()
         {
-            IEnumerable<EngineeringStudent> enggStudents = _students.OfType<EngineeringStudent>();
+            IEnumerable<EngineeringStudent> enggStudents = StudentList.FetchStudents().OfType<EngineeringStudent>();
             foreach (EngineeringStudent std in enggStudents)
             {
                 Console.WriteLine(std.StudentId + " " + std.FirstName + " " + std.LastName);
@@ -36,27 +35,11 @@ namespace cms_linq.LinqFiltering
         private static void LinqWhere()
         {
             //IEnumerable<Student> studentFilter = _students.Where(s => s.LastName == "Smith");
-            IEnumerable<Student> studentFilter = _students.Where(s => s.LastName.Equals("Smith"));
+            IEnumerable<Student> studentFilter = StudentList.FetchStudents().Where(s => s.LastName.Equals("Smith"));
             foreach (Student std in studentFilter)
             {
                 Console.WriteLine(std.StudentId + " " + std.FirstName + " " + std.LastName);
             }
-        }
-
-        private static List<Student> InitializeData()
-        {
-            _students = new List<Student>()
-            {
-                new EngineeringStudent(101, "James", "Smith"),
-                new EngineeringStudent(102, "Robert", "Smith"),
-                new MedicalStudent(103, "Maria", "Rodriguez"),
-                new EngineeringStudent(104, "David", "Smith"),
-                new MedicalStudent(105, "James", "Johnson"),
-                new EngineeringStudent(106, "James", "SevenLast"),
-                new MedicalStudent(107, "Maria", "Garcia"),
-                new MedicalStudent(108, "Mary", "Smith")
-            };
-            return _students;
         }
     }
 }
