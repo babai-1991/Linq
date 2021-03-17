@@ -41,5 +41,7 @@ namespace cms_linq.LinqFiltering
                 Console.WriteLine(std.StudentId + " " + std.FirstName + " " + std.LastName);
             }
         }
+
+        
     }
 }
