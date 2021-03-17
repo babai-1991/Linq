@@ -16,7 +16,8 @@ namespace cms_linq._4_LinqJoin
             _students = Data.FetchStudents();
             _courses = Data.FetchCourses();
             //LinqJoinOperator();
-            LinqGroupJoin();
+            //LinqGroupJoin();
+            
         }
 
         //one to many 
@@ -97,16 +98,16 @@ namespace cms_linq._4_LinqJoin
              4. last parameter will be the final result
              */
 
-            var query = _students.Join(_courses, std => std.CourseId, cor => cor.Id, (st, crs) => new
-            {
-                StudentId = st.StudentId,
-                Name = st.FirstName + " " + st.LastName,
-                CourseName = crs.Name
-            });
-            foreach (var data in query)
-            {
-                Console.WriteLine($"StudentId {data.StudentId} Name {data.Name} Enrolled for {data.CourseName}");
-            }
+            //var query = _students.Join(_courses, std => std.CourseId, cor => cor.Id, (st, crs) => new
+            //{
+            //    StudentId = st.StudentId,
+            //    Name = st.FirstName + " " + st.LastName,
+            //    CourseName = crs.Name
+            //});
+            //foreach (var data in query)
+            //{
+            //    Console.WriteLine($"StudentId {data.StudentId} Name {data.Name} Enrolled for {data.CourseName}");
+            //}
         }
     }
 }
