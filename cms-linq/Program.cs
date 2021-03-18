@@ -14,7 +14,8 @@ namespace cms_linq
             //cms_linq._2_LinqProjection.Example.Start();
             //cms_linq._3_LinqSorting.Exercise.Start();
             //cms_linq._4_LinqJoin.Exercise.Start();
-            cms_linq._5_LinqGrouping.Exercise.Start();
+            //cms_linq._5_LinqGrouping.Exercise.Start();
+            cms_linq._6_LinqElements.Exercise.Start();
         }
     }
 }
